@@ -18,6 +18,7 @@
 		D85493BE1CD69ED0002644DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85493BC1CD69ED0002644DA /* LaunchScreen.storyboard */; };
 		D85493CB1CD6A088002644DA /* pokemon.csv in Resources */ = {isa = PBXBuildFile; fileRef = D85493CA1CD6A088002644DA /* pokemon.csv */; };
 		D85493CD1CD6ABD6002644DA /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85493CC1CD6ABD6002644DA /* Pokemon.swift */; };
+		D888D6601CD7ADB20067BCE6 /* PokemonDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D888D65F1CD7ADB20067BCE6 /* PokemonDetailVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		D85493BF1CD69ED0002644DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D85493CA1CD6A088002644DA /* pokemon.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pokemon.csv; sourceTree = "<group>"; };
 		D85493CC1CD6ABD6002644DA /* Pokemon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
+		D888D65F1CD7ADB20067BCE6 /* PokemonDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonDetailVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				D85493B51CD69ED0002644DA /* ViewController.swift */,
+				D888D65F1CD7ADB20067BCE6 /* PokemonDetailVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 				D82ECD831CD6BE0F00D19E19 /* PokeCell.swift in Sources */,
 				D85493B61CD69ED0002644DA /* ViewController.swift in Sources */,
 				D85493B41CD69ED0002644DA /* AppDelegate.swift in Sources */,
+				D888D6601CD7ADB20067BCE6 /* PokemonDetailVC.swift in Sources */,
 				D85493CD1CD6ABD6002644DA /* Pokemon.swift in Sources */,
 				D82ECD851CD6CFCE00D19E19 /* csv.swift in Sources */,
 			);
