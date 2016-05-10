@@ -11,28 +11,40 @@ import AVFoundation
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
 
+  
+//MARK: - IBOutlets
+  
+  
     @IBOutlet weak var collection: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
-    
+
+  
+//MARK: - Variables
+  
+  
     var pokemon = [Pokemon]() // We are creating an array where we'll insert the data from pokemon CSV
     var filteredPokemon = [Pokemon]()
     var musicPlayer: AVAudioPlayer!
     var inSearchMode = false
     
-    
+
+//MARK: - View Lifecycle
+  
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         collection.delegate = self
         collection.dataSource = self
         searchBar.delegate = self
         searchBar.returnKeyType = UIReturnKeyType.Done // Set the enter key to "Done"
-        
+      
         initAudio()
         parsePokemonCSV()
     }
     
 
-    
+//MARK: - Initialize audio
+  
     func initAudio() {
         let path = NSBundle.mainBundle().pathForResource("music", ofType: "mp3")!
         
@@ -46,7 +58,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
         
     }
-    
+
+//MARK: - Parsing feature
+  
+  
     func parsePokemonCSV() {
         let path = NSBundle.mainBundle().pathForResource("pokemon", ofType: "csv")!
         
@@ -66,26 +81,30 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
     
     }
-    
+  
+  
+//MARK: - UICollectionViewDelegate
+  
+  
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+      
+      if let cell = collectionView.dequeueReusableCellWithReuseIdentifier("PokeCell", forIndexPath: indexPath) as? PokeCell {
+        let poke: Pokemon!
         
-        if let cell = collectionView.dequeueReusableCellWithReuseIdentifier("PokeCell", forIndexPath: indexPath) as? PokeCell {
-            let poke: Pokemon!
-            
-            if inSearchMode {
-                poke = filteredPokemon[indexPath.row]
-            } else {
-                poke = pokemon[indexPath.row]
-            }
-            
-            cell.configureCell(poke)
-            
-            return cell
+        if inSearchMode {
+          poke = filteredPokemon[indexPath.row]
         } else {
-            return UICollectionViewCell()
+          poke = pokemon[indexPath.row]
         }
+        
+        cell.configureCell(poke)
+        
+        return cell
+      } else {
+        return UICollectionViewCell()
+      }
     }
-    
+  
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
         var poke: Pokemon!
@@ -98,7 +117,17 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         performSegueWithIdentifier("PokemonDetailVC", sender: poke)
     }
+
+  
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
     
+    return CGSizeMake(105, 105)
+    }
+  
+  
+//MARK: - UICollectionViewDataSource
+  
+  
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if inSearchMode {
@@ -112,10 +141,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         return 1
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSizeMake(105, 105)
-    }
-    
+
+  
+  
+//MARK: - UISearchBarDelegate
+  
+  
     // When pressing search on the keyboard
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         view.endEditing(true)
@@ -135,7 +166,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             
         }
     }
-    
+
+//MARK: - UIViewController
+  
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // If the loaded segue has the identifier "PokemonDetailVC", then...
         if segue.identifier == "PokemonDetailVC" {
@@ -146,8 +179,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             }
         }
     }
-    
-    
+
+  
+//MARK: - IBActions
+  
+  
     @IBAction func musicBtnPressed(sender: UIButton) {
         
         if musicPlayer.playing {

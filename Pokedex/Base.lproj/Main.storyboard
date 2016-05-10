@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -241,7 +241,7 @@
                                                 <rect key="frame" x="120" y="0.0" width="440" height="120"/>
                                                 <string key="text">Morbi purus sem, suscipit eget eros ac, interdum facilisis mi. Nullam nec rhoncus ante. Nam aliquam metus vel libero aliquet viverra. Fusce vitae lectus eu nulla cursus bibendum. Maecenas tellus augue, vehicula auctor mattis a, molestie quis ex. </string>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -277,7 +277,7 @@
                                     </stackView>
                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cwg-Fu-vpa" userLabel="Thin divider">
                                         <rect key="frame" x="0.0" y="290" width="560" height="1"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="b5c-kG-qCm"/>
                                         </constraints>
@@ -401,16 +401,18 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="baseAttack" destination="Vwf-gV-tUq" id="eSI-5d-p7t"/>
                         <outlet property="currentEvoImg" destination="n6f-ax-8IT" id="FMz-9P-N8K"/>
-                        <outlet property="defenseLbl" destination="6Gm-O5-3bz" id="t2R-Qj-iAD"/>
+                        <outlet property="defenseLbl" destination="gwJ-ZN-rw8" id="XMm-Ni-IMN"/>
                         <outlet property="descriptionLbl" destination="Thi-Lk-8Lz" id="HmY-GL-Cbj"/>
                         <outlet property="evoLbl" destination="hc8-Pa-tlR" id="87a-Wf-YjK"/>
-                        <outlet property="heightLbl" destination="cHt-yF-A9d" id="AlT-tC-Afc"/>
+                        <outlet property="heightLbl" destination="EBo-sy-g4u" id="0Dl-bn-pVS"/>
                         <outlet property="mainImg" destination="BBH-AD-U74" id="1zh-E2-npu"/>
                         <outlet property="nameLbl" destination="WHN-jm-CR8" id="cJN-Ty-aiy"/>
                         <outlet property="nextEvoImg" destination="5h1-pM-H65" id="NIW-0N-ont"/>
-                        <outlet property="pokedexLbl" destination="Efi-ZI-Dwu" id="xyr-eD-sUn"/>
-                        <outlet property="typeLbl" destination="Dhy-Qz-43B" id="snI-iU-elQ"/>
+                        <outlet property="pokedexLbl" destination="Vh5-my-UvW" id="H0s-gu-N0i"/>
+                        <outlet property="typeLbl" destination="x5j-sa-MlA" id="vJ3-hT-9cQ"/>
+                        <outlet property="weightLbl" destination="e4R-tg-hCw" id="qTD-a9-lOL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rWs-i9-Jq2" userLabel="First Responder" sceneMemberID="firstResponder"/>
